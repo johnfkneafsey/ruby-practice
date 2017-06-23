@@ -9,10 +9,92 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
- *= require_tree .
- *= require_self
  */
 
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+
+
+
+.content {
+    display: flex;
+}
+
+// Map side bar image
+ .map-side-bar {
+    background: image-url('map.png');
+    position: relative;     
+    height: 900px;
+    width: 532px;
+ }
+
+// Teachable logo position
+.map-side-bar .teachable-logo {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+// Navigation bar (Search/Favorites) positioning and styling
+.nav {
+    position: absolute;
+    top: 400px;
+    right: 0px;
+}
+
+.nav .nav-item-box {
+    width: 140px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.nav .nav-item-box {
+    padding-left: 15px;
+    color: white;
+    font-size: 18px;
+	font-family: Arial; 
+}
+
+// Search area
+.search-area {
+    flex-grow: 1;
+    padding-left: 100px;
+    padding-top: 200px;
+}
+
+.search-title {
+    padding-left: 60px;
+    padding-bottom: 30px;
+    font-size: 36px;    
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    border:1px solid grey;
+    padding: 15px;
+    border-radius: 40px;
+    height: 85px;
+    width: 700px;    
+}
+
+input[type="text"] {
+    border: transparent;
+    font-size: 18px;
+    text-indent: 40px;
+    flex-grow: 2;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    background: image-url('magnifying-glass.png');
+    height: 20px;
+    width: 20px;
+    border: none;
+    margin-top: 15px;
+    margin-right: 15px;
+}

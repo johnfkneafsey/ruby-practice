@@ -1,1 +1,58 @@
-Please build the search page here.
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Teachable Growth Team Developer Test"/>	
+<title>Teachable - Gem Search App</title>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#search').click(function(event) {
+            let textInput = $('#input').val();
+            $.ajax({
+                url: '/APIController',
+                type: 'GET',
+                data: {id: textInput},
+                success: function(data) {console.log('success: '+data);},
+                error: function(data) {console.log('error: '+data);}
+                });
+            });
+        })
+    })
+</script>
+
+</head>
+
+<body>
+
+<!-- Container -->
+<div class="content">
+    <!-- Map side bar image -->
+    <div class="map-side-bar">
+        <%= image_tag "teachable-logo.png", class:"teachable-logo" %>
+        <!-- Navigation bar (Search/Favorites) -->
+        <div class="nav">
+            <div class="nav-item-box">
+                <p class="nav-item-text">Search</p>
+            </div>
+            <div class="nav-item-box">
+                <p class="nav-item-text">Favorites</p>
+            </div>    
+        </div>    
+    </div>
+    <!-- Search area -->
+    <div class="search-area">
+        <h1 class="search-title">Search Gems</h1>
+        <form>
+            <input id="input" type="text" placeholder="Search" required >
+            <button id="search" ></button>
+        </form>
+        <div class="search-results">
+            <p>Search Results</p>
+        </div>        
+    </div>
+</div>
+</body>
+

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root to: "static_pages#root"
-  get '/favorites' => "static_pages#favorites"
+  resource :api_controller
+    get '/api_controller/:string' => 'api_controller#make_api_call'
 end
